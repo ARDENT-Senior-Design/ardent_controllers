@@ -1,0 +1,41 @@
+## Joint State Controller ----------------------------------------
+# Updates the joint positions
+joint_state_controller:
+  type: joint_state_controller/JointStateController
+  publish_rate: 50  
+
+## Joint Trajectory Effort Controller ----------------------------------------
+joint_trajectory_effort_controller:
+  type: "effort_controllers/JointTrajectoryController"
+  joints:
+    - j_coxa_rf
+    - j_femur_rf
+    - j_tibia_rf
+
+  gains:
+    j_coxa_rf: {p: 1.5,  d: 0, i: 0.002, i_clamp: 0.1}
+    j_femur_rf: {p: 1.5,  d: 0, i: 0.002, i_clamp: 0.1}
+    j_tibia_rf: {p: 1.5,  d: 0, i: 0.002, i_clamp: 0.1}
+## Joint Trajectory Position Controller ----------------------------------------
+joint_trajectory_pos_controller:
+  type: "position_controllers/JointTrajectoryController"
+  joints:
+    - j_coxa_rf
+    - j_femur_rf
+    - j_tibia_rf
+
+  gains:
+    j_coxa_rf: {p: 1.5,  d: 0, i: 0.002, i_clamp: 0.1}
+    j_femur_rf: {p: 1.5,  d: 0, i: 0.002, i_clamp: 0.1}
+    j_tibia_rf: {p: 1.5,  d: 0, i: 0.002, i_clamp: 0.1}
+## Joint Trajectory Velocity Controller ----------------------------------------
+joint_trajectory_vel_controller:
+  type: "velocity_controllers/JointTrajectoryController"
+  joints:
+    - j_coxa_rf
+    - j_femur_rf
+    - j_tibia_rf
+  gains:
+    j_coxa_rf: {p: 1.5,  d: 0, i: 0.002, i_clamp: 0.1}
+    j_femur_rf: {p: 1.5,  d: 0, i: 0.002, i_clamp: 0.1}
+    j_tibia_rf: {p: 1.5,  d: 0, i: 0.002, i_clamp: 0.1}
